@@ -17,16 +17,19 @@ Finally, you will be prompted asking whether or not you would like to try again.
 public class MainFrame extends JFrame{
     private InputPanel inputPanel;
     private ControlPanel controlPanel;
+    private TextPanel textPanel;
 
     public MainFrame(){
         super("Idea Jar");
 
         inputPanel = new InputPanel();
         controlPanel = new ControlPanel();
+        textPanel = new TextPanel();
         setLayout(new BorderLayout());
 
-        add(inputPanel, BorderLayout.CENTER);
-        add(controlPanel, BorderLayout.SOUTH);
+        add(inputPanel, BorderLayout.NORTH);
+        add(controlPanel, BorderLayout.CENTER);
+        add(textPanel, BorderLayout.SOUTH);
 
         setSize(600, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -36,7 +39,7 @@ public class MainFrame extends JFrame{
         controlPanel.setListener(new Listener() {
             @Override
             public void randomize() {
-                inputPanel.randomize();
+                textPanel.appendText(inputPanel.randomize());
             }
         });
     }

@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public class ControlPanel extends JPanel implements ActionListener {
     private JButton randomizeButton;
     private Listener listener;
+    private String result;
 
     public ControlPanel(){
         randomizeButton = new JButton("Randomize");
@@ -16,6 +17,7 @@ public class ControlPanel extends JPanel implements ActionListener {
         add(randomizeButton);
     }
 
+    // Set Listeners
     public void setListener(Listener listener){
         this.listener = listener;
     }

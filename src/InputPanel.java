@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class InputPanel extends JPanel{
     private JTextField itemOne;
@@ -21,6 +22,7 @@ public class InputPanel extends JPanel{
 
     public String randomize(){
         String result = "";
+        Random r = new Random();
 
         // Add all the text field information to the array list
         textFieldList.add(itemOne.getText());
@@ -29,6 +31,9 @@ public class InputPanel extends JPanel{
         for(String i : textFieldList){
             System.out.println(i);
         }
+
+        // Print out random item from the list
+        result = textFieldList.get(r.nextInt(textFieldList.size()));
 
         /*
         This method will randomize the text field results,
